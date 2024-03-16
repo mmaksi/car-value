@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './users/user.entity';
 import { Report } from './reports/report.entity';
+import { ReportsModule } from './reports/reports.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -12,6 +14,8 @@ import { Report } from './reports/report.entity';
       driver: require('sqlite3'),
       entities: [User, Report],
     }),
+    UsersModule,
+    ReportsModule,
   ],
 })
 export class AppModule {}

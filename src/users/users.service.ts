@@ -10,7 +10,34 @@ export class UsersService {
     private usersRepository: Repository<User>,
   ) {}
 
-  findAll(): Promise<User[]> {
-    return this.usersRepository.find();
+  async createUser(email: string, password: string) {
+    const user = this.usersRepository.create({ email, password });
+
+    return await this.usersRepository.save(user);
+  }
+
+  async findOne(id: number) {
+    const user = await this.usersRepository.findOneBy({ id });
+    console.log('service');
+    return user;
+  }
+
+  async find(email: string) {
+    return await this.usersRepository.find({ where: { email } });
+  }
+
+  async update(id: number, attrs: Partial<User>) {
+    const user = await this.findOne(id);
+    if (user) {
+      Object.assign(user, attrs);
+      return this.usersRepository.save(user);
+    }
+    return null;
+  }
+
+  async remove(id: number) {
+    const user = await this.findOne(id);
+    if (user) return this.usersRepository.remove(user);
+    return null;
   }
 }
