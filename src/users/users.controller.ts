@@ -40,7 +40,6 @@ export class UsersController {
   @Get('/:id')
   async findUser(@Param('id', ParseIntPipe) id: number) {
     const user = await this.usersService.findOne(id);
-    console.log('controller');
     if (user) return user;
     throw new NotFoundException();
   }

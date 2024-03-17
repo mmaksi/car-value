@@ -18,7 +18,6 @@ export class UsersService {
 
   async findOne(id: number) {
     const user = await this.usersRepository.findOneBy({ id });
-    console.log('service');
     return user;
   }
 

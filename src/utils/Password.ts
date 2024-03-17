@@ -1,6 +1,5 @@
 import bcrypt from 'bcryptjs';
 
-const salt = bcrypt.genSaltSync(10);
 export class Password {
   static async hash(password: string): Promise<string | Error> {
     try {
