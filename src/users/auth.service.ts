@@ -6,7 +6,6 @@ import {
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { Password } from 'src/utils/Password';
-import { NotFoundError } from 'rxjs';
 
 @Injectable()
 export class AuthService {
