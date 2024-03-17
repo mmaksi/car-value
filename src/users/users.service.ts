@@ -12,7 +12,6 @@ export class UsersService {
 
   async createUser(email: string, password: string) {
     const user = this.usersRepository.create({ email, password });
-
     return await this.usersRepository.save(user);
   }
 
