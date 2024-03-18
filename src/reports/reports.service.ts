@@ -16,4 +16,13 @@ export class ReportsService {
     report.user = user;
     return this.reportRepository.save(report);
   }
+
+  async changeApproval(id: number, approved: boolean) {
+    const report = await this.reportRepository.findOne({
+      where: { id },
+    });
+    if (!report) return null;
+    report.approved = approved;
+    return await this.reportRepository.save(report);
+  }
 }
