@@ -1,7 +1,7 @@
 # Car Value Estimation API
 This API allows signed-in users to get an estimation of a car value based on their location, car's make, model, year and mileage. The estimation is calculated from previous reports added by the users after being approved by the admins.
 
-Estimation calculation is as follows: the application calculates the average price of all approved cars within +/- 5 langtitude and latitude degrees and where the model year of the car is +/- 3 years.
+Estimation calculation: the application calculates the average price of all approved cars within +/- 5 langtitude and latitude degrees and where the model year of the car is +/- 3 years.
 
 ## Local Setup:
 1. `git clone https://github.com/mmaksi/car-value.git`
