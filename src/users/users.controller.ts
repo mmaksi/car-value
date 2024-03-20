@@ -33,6 +33,7 @@ export class UsersController {
   @Get('/whoami')
   @UseGuards(AuthGuard)
   whoAmI(@CurrentUser() user: User, @Session() session: any) {
+    console.log(user);
     return user;
   }
 

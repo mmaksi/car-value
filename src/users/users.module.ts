@@ -12,4 +12,8 @@ import { CurrentUserMiddleware } from '../middlewares/current-user.middleware';
   imports: [TypeOrmModule.forFeature([User])],
   exports: [UsersService],
 })
-export class UsersModule {}
+export class UsersModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer.apply(CurrentUserMiddleware).forRoutes('*');
+  }
+}
