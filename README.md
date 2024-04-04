@@ -26,7 +26,7 @@ Estimation calculation: the application calculates the average price of all appr
 
 NestJS, Express.js, TypeScript, TypeORM, SQLite, JWT & Cookies.
 
-## Auth Module
+## Report Module
 Diagram URL: https://i.ibb.co/nLSm7Tj/Users-Module.png
 ![project-architecture](https://i.ibb.co/nLSm7Tj/Users-Module.png)
 
